@@ -1,3 +1,5 @@
+package ru.stepic.base;
+
 public class Tasks {
 
     public static char charExpression(int a) {
@@ -22,7 +24,12 @@ public class Tasks {
     public static void main(String args[]) {
         int [] arrayFirst = new int []{1, 4,6,7,10};
         int [] arraySecond = new int[] {-2, -1, 0, 4,6, 8};
-            System.out.println(mergeArrays(arrayFirst,arraySecond));
+        /*    System.out.println(mergeArrays1(arrayFirst,arraySecond));
+        boolean a= false;
+        boolean b = false;
+        boolean c = true;
+        boolean d = true; */
+        //System.out.println(booleanExpression (a, b, c, d));
         }
 
 
@@ -66,5 +73,39 @@ public class Tasks {
                 .toLowerCase();
         return text.equals(revText);
 
+    }
+
+    public static boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
+        return ((!a & !b & c & d )|| (!a & b & !c & d)||(!a & b & c & !d) || (a & !b & !c & d) || (a & !b & c & !d)|| (a & b & !c & !d));
+    }
+
+    public static int[] mergeArrays1(int[] a1, int[] a2) {
+
+        int zLength = a1.length + a2.length;
+        int[] z = new int[zLength];
+
+
+        for (int i = 0, j = 0, k = 0; k < (zLength); k++) {
+
+            if (i > (a1.length - 1)) {
+                z[k] = a2[j];
+            }
+
+            else if (j > (a2.length - 1)) {
+                z[k] = a1[i];
+            }
+
+            else if (a1[i] < a2[j]) {
+                z[k] = a1[i];
+            }
+
+            else {
+                z[k] = a2[j];
+            }
+            System.out.println(z[k]);
+
+        }
+
+        return z;
     }
 }

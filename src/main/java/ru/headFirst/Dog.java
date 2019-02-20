@@ -1,4 +1,4 @@
-package main.java.ru.headFirst;
+package ru.headFirst;
 
 public class Dog {
     String name;
